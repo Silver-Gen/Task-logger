@@ -1,0 +1,64 @@
+Tasks - Name of Tasks. What can Task be? Anything from Projects, General Small Task. Since this will be kinda used in the terminal along with code development, I request to use only for Development related tasks. If not, please update everything manually
+Description - Description about Tasks
+Prediction Time - How much time do you think This will take to complete. The unit of time is Hours. Default value = 36 Hours which shall be written as 36.
+Priority - Values are Integers. Ranges from 1 - 10. (Generally Implemented Slider) 1 Being low Priority and 10 being Highest. Generally also introduce around the slider which tasks have which values which shall give general idea of how tasks have been previously rated priority wise (Default value = min(avg-value,5)
+Tags - Tags/Categories->Do you want to name which category this shall belong to. Multiple can be added too (Default value = Uncategorized, Values are below - 
+C,Cpp,Bash,Analytics,Machine Learning,Artificial Intelligence,Python,LaTeX,Core Computer Science,Algorithms,Mathematics,Space and Astronomy,Embedded,Compiler,Hobby,Work,Obligation,R,GPU programming,Game Development,Portfolio and Design,DevOPS Shenanigans,AR/VR- Mixed Reality,Databases,Teleology of Projects and Frameworks
+Let this be known that these categories can be added and are not indicative exhaustive meaning a project can be one category or multiple categories)
+Status - Status can be one of following values - 
+Uninitiated,Ongoing,Halted,Dropped,Completed,Post Completion
+)
+Substasks - Add Subtasks here,
+Time Taken Until - This will be a sentence or a Code word or something that Describes -  as follows - (Time taken for phase of Uninitiation, Time spent actively, How much % active time Predicted time , How much time I have spent in putting the project at Halt)
+PreInitiationPeriod  _ Labor _ PredictionAccuracy _ HaltingTime
+DDD _ HHH.MM _ %%%.%% _ DDD
+(A project turns to Halting after 21 days and dropped after 90 days of empty Labor periods)
+Progress Till - This is self reported % of work completed till. It can be slider or Just a text of additive. Note: This is self reported value, and what that means that these will not be treated as percentages but numbers. This will probably used to understand self reported labor. 
+Project Folder Location - Location of Project Soft Copies related to project 
+Estimated Effort Points  - This is kinda similar to what Effort Points are in Agile Philosophy. Here the difference is that they would be It would be combination of following values Estimated EF at Initiation _ Estimated EF at Halt _ Estimated EF at Completition (All values would be more 1 and less than 
+iii _ iii _ iii
+Dates- Consists of Following dates  -
+Date of Declaration _ Date of Initiation _ Date of Ongoing _ Data of Halt _ Date of Completion
+DD/MM/YY _ DD/MM/YY _ DD/MM/YY{...} _ DD/MM/YY _ DD/MM/YY
+
+
+UPdate Dates and Time Taken Until everyday
+
+
+
+
+Tab I - "Work Effort Progress and other Abstractions"
+1) Pie chart of Uninitiated,Ongoing,Halted,Dropped,Completed,Post Completion - "Historics record of how much have I conquered"
+2)  Cognitive Load Index - Labor Hours@Dates * Estimated Effort Points * Progress * Number of Tags * NLP factor of Description (of LAst 7 active tasks) 
+3) Progress vs Labor Time Series  for Last 7 active(recently activity of any kind which goes back full dates) task (Task name as color separation, - vs Dates of Ongoing vs Labor 
+X - Axis - Date
+Y - Axis  - Labor Hours 
+Progress Till - Size of Scatter
+Color - Task 
+(How do we define last 7? - Those task which have recent activity of any kind) -  "Shows me how I am working on recent tasks"
+4) Effort Points vs Priority graph - This would give a single matrix containing "Efforts vs Priority Graph and COlor them, Around the graph would be somewhere small list of 2 -3 tasks in each column - "Shows me what should be next task"
+
+
+Tab II Name - "understanding Tags" (Options - Individual vs Grouped) 
+1) Tags wise Priority - Bar Graph
+2) Tags Wise average Prediction Time - Scatter plot with Task as Color
+3) Tags wise Labor  and Effort Points - Scatter plot with Task as Color
+4) Tags vs average session Progress ( 12_14_13_58_23.. average these numbers etc)
+
+
+Tab III - "Hall of Halts and Dropped"
+1) Estimated Effort Points Prediction Time   Labor Time and  number days of Halt- Average / Mean
+2) Dropped vs Halt(Color distinction) Labour Time vs Dates
+3) Common Tags for Halted and Common Tags for Dropping (Grouped for Task)
+4) Dropped vs Halt(Color distinction) Progress Time vs Dates
+
+
+Tab IV - "Is this end or Should we Transcend?"
+1)  Lifecycle Time Breakdown - Show Graphs in four phases - Unintiated ,Halted, Completed Of Last 4 completed tasks. - Give Effort Points and prediction and overimpose labor and progress till  ????(I have no Idea How to be honest)
+2) Estimated Effort Points Prediction Time   Labor Time and  number days of Completion - Average/Mean
+3) Priority vs Completion Time vs Effort Values - Scatter Plot
+4) Tags vs Completion (Individual vs Group)
+
+
+
+

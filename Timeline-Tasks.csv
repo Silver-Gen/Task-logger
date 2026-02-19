@@ -1,0 +1,2 @@
+Tasks,Description,Prediction_Time,Priority,Tags,Status,Subtasks,Time_Taken_Until,Progress_Till,Project_Folder_Location,Estimated_Effort_Points,Dates
+Ncurses TUI,I want a NCurses 	TUI with Stopwatch and ability to run the bash command to run python gui. Also do other things,80,9,"['C', 'Bash', 'Hobby']",Uninitiated,,000.00_00.00_000.000_00.00,,,13_000_000,18/02/2026_00/00/00_00/00/00_00/00/00_00/00/00
