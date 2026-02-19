@@ -49,14 +49,14 @@ This does not means we should re-invent the wheel for the sake of Flying across 
 As a demonstrative example Here are some screenshots of what This would probably look like -
 
 Here is the TUI
-![TUI Task](Screenshots/Shows TUI Task Choice.png)
-![Timer in TUI](Screenshots/Shows Task Timer.png)
-![TUI+GUI for Halt EF](Screenshots/Shows how Tasks Goes to Halt.png)
+![TUI Task](Screenshots/Shows%20TUI%20Task%20Choice.png)
+![Timer in TUI](Screenshots/Shows%20Task%20Timer.png)
+![TUI+GUI for Halt EF](Screenshots/Shows%20how%20Tasks%20Goes%20to%20Halt.png)
 
 This shows the GUI 
-![GUI](Screenshots/Shows GUI.png)
-![Add Task GUI](Screenshots/Shows How to Add tasks.png)
-![Edit Task inside Gui](Screenshots/Shows how to edit tasks.png)
+![GUI](Screenshots/Shows%20GUI.png)
+![Add Task GUI](Screenshots/Shows%20How%20to%20Add%20tasks.png)
+![Edit Task inside Gui](Screenshots/Shows%20how%20to%20edit%20tasks.png)
 
 
 
@@ -134,19 +134,19 @@ I am showcasing 16 proably different visuals along 4 tabs in the GUI. A peak int
 Here is the description of Visuals that in the Gui
 
 Tab I - "Work Effort Progress and other Abstractions"
-![Tab I](Screenshots/Show Graph TAb 1.png)
+![Tab I](Screenshots/Show%20Graph%20TAb%201.png)
 
 
 Tab II Name - "understanding Tags" (Options - Individual vs Grouped) 
-![Tab I](Screenshots/Show Graph TAB 2.png)
+![Tab I](Screenshots/Show%20Graph%20TAB%202.png)
 
 
 Tab III - "Hall of Halts and Dropped"
-![Tab I](Screenshots/Show Graph Tab 3.png)
+![Tab I](Screenshots/Show%20Graph%20Tab%203.png)
 
 
 Tab IV - "Is this end or Should we Transcend?"
-![Tab I](Screenshots/Show Graph TAB 4.png)
+![Tab I](Screenshots/Show%20Graph%20TAB%204.png)
 
 
 
