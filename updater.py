@@ -34,6 +34,10 @@ def parse_dates(s):
     }
 
 
+def parse_time(raw_time: str):
+    """Reduce a time string — dot or colon delimited — to a time object."""
+    return datetime.strptime(raw_time.replace(":", "."), "%H.%M").time()
+
 # ── Rebuilders ────────────────────────────────────────────────────────────────
 
 def rebuild_time_taken(row):
@@ -54,6 +58,8 @@ def rebuild_dates(row):
 def to_minutes(t) -> float:
     """Reduce a time object to its numerical soul — total minutes."""
     return t.hour * 60 + t.minute
+
+
 
 
 # ── Load ──────────────────────────────────────────────────────────────────────
@@ -98,7 +104,7 @@ match mode:
         progress = int(sys.argv[3])
         name     = sys.argv[4]
 
-        parsed_t       = datetime.strptime(raw_time, "%H.%M").time()
+        parsed_t = parse_time(raw_time)
         parsed_minutes = to_minutes(parsed_t)
 
         existing_raw     = data_df.loc[data_df["Tasks"] == name, "Prediction_Time"].values[0]
@@ -183,7 +189,7 @@ match mode:
         current_status = data_df.loc[data_df["Tasks"] == name, "Status"].values[0]
 
         if current_status == "Ongoing":
-            parsed_t       = datetime.strptime(raw_time, "%H.%M").time()
+            parsed_t       = parse_time(raw_time)
             parsed_minutes = to_minutes(parsed_t)
 
             existing_raw     = data_df.loc[data_df["Tasks"] == name, "Prediction_Time"].values[0]
