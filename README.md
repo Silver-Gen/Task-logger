@@ -44,6 +44,7 @@ but rather a personal hobby project. I wanted something that I made myself(This 
 Essentially the Motivation of this project was to have 
 > "Authentic existence demands a private liturgy of organization. When the 'Other' imposes its structures, it brings the entropy of the alien.
 > Only the internal mechanism—forged in the heat of self-awareness—operates with the silence of true independence"
+
 This does not means we should re-invent the wheel for the sake of Flying across oceans. But we should have control and knowledge over the object that decides our daily personal life. 
 As a demonstrative example Here are some screenshots of what This would probably look like -
 
