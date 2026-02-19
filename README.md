@@ -1,6 +1,6 @@
 # Greetings
 This is a general personal setup I am currently Using. You can probably see below - 
-![What will it look like in Tmux](Screenshot/Screenshot.png)
+![What will it look like in Tmux](Screenshots/Screenshot.png)
 With all intents and purposes consider this a Working prototype. Most of it is AI Generated and personally All code written by AI should be treated as Prototype only.
 
 
