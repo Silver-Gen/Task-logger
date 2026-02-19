@@ -5,7 +5,7 @@ With all intents and purposes consider this a Working prototype. Most of it is A
 
 
 ## Genral Folder Structure is something like
-
+```
 .personal_bash_config
 Tasks/
 │
@@ -14,7 +14,7 @@ Tasks/
 ├── Timeline-Tasks.csv
 ├── gui.py
 ├── logo.txt
-
+```
 
 
 Even after this, this whole setup might not work. At this current stage this is not reporducible
