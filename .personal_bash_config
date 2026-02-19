@@ -1,0 +1,197 @@
+# Apply update_bashrc on terminal to do things
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+
+alias p_logo='clear; cat ~/Tasks/logo.txt'
+
+alias bashrc_update='update_bashrc'
+
+alias clear_cache='sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches'
+
+alias sudo_update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
+alias update_sudo='sudo_update'
+
+cli_names='conda o3d3 postgresql ffmpeg cmake docker make parallel tmux 7zip(and all other tools) zenity'
+alias cli_apps='echo $cli_names'
+
+perf_analysis='uptime;dmesg | tail;vmstat 1;mpstat -P ALL 1;pidstat 1;iostat -xz 1;free -m;sar -n DEV 1;sar -n TCP,ETCP 1;top'
+alias perf_0.6='echo $perf_analysis'
+
+
+logger_gui() {
+	conda activate
+	echo "Starting the Logger GUI"
+	python3 ~/Tasks/gui.py
+	echo "Ending the Logger GUI"
+	conda deactivate
+}
+
+update_logger() {
+	conda activate
+	python3 ~/Tasks/updater.py R
+	conda deactivate
+}
+
+add_session() {
+	conda activate
+	python3 ~/Tasks/updater.py T $1 $2 $3
+	conda deactivate 
+}
+
+complete_task() {
+	conda activate
+	python3 ~/Tasks/updater.py C $1 $2 $3
+	conda deactivate 
+}
+
+gradient_bg() {
+    local str="$1"
+    local len=${#str}
+    
+    # The Nine Stations of Chromatic Pilgrimage
+    local colors=(
+        "140 60 160"   # Purple — the wound of beginnings
+        "200 70 120"   # Magenta-red — desire's first blush
+        "230 100 80"   # Red-orange — fever ascending
+        "240 150 70"   # Orange — the sun's own flesh
+        "235 205 90"   # Yellow — enlightenment or madness
+        "160 210 120"  # Green-yellow — spring's cruel promise
+        "90 195 180"   # Cyan-green — the drowning begins
+        "60 160 210"   # Cyan-blue — oceanic dissolution
+        "80 120 190"   # Blue — terminal depth
+    )
+    
+    for (( i=0; i<len; i++ )); do
+        read -r r g b <<< "${colors[$i]}"
+        echo -ne "\033[48;2;${r};${g};${b}m\033[30m${str:$i:1}"
+    done
+    echo -ne "\033[0m"
+}
+
+random_thought() {
+    local thoughts=(
+        "THINK" "WAIT" "REVOLVE" "EXECUTE" "VOID" "LISTEN" 
+        "SURRENDER" "ASCEND" "DECAY" "REBOOT" "OBSERVE" 
+        "WITNESS" "COLLECT" "ENDURE" "SCANNING" "DREAMING" 
+        "ISOLATE" "OBLIVION" "PULSING" "SEARCH" "FOUND"
+        "THE PALE" "INFECTED" "HARDCORE" "DISCO" "THE VOID" 
+        "BLOOD TIES" "LINES BLUR" "ENDURE" "AESTHETIC" 
+        "KINETIC" "INLAND" "VOLITION" "EGO DEATH" "LIMITS"
+        "CALIBRATE" "OVERWRITE" "ENCRYPT" "FRAGMENT" 
+        "SYNCHRONIZE" "LIMINAL" "ENTROPY" "PARALLAX" "ECHO"
+        "MEMORIAM" "SOLIPSISM" "CATHARSIS" "ABYSSAL"
+	"GHOST-IN-THE-GEAR" "DISSOCIATE" "MANIFEST"
+	"COGNITION" "THRESHOLD" "MANTRA" "AMNESIA"
+	"PSYCHOSIS" "NEON-FEVER" "EUPHORIA" "EXHUMED"
+	"STAGNATE" "OSCILLATE" "DEFRAGMENT" "SUBLIMATE"
+    )
+    echo "${thoughts[$RANDOM % ${#thoughts[@]}]}"
+}
+get_uptime() {
+    # Takes 'up 2 hours, 31 minutes' -> '2h, 31m'
+    uptime -p | sed 's/up //' | sed 's/ hours\?/h/' | sed 's/ minutes\?/m/' | sed 's/ days\?/d/'
+}
+
+get_essence() {
+    if [ -d /sys/class/power_supply/BAT0 ]; then
+        local cap=$(cat /sys/class/power_supply/BAT0/capacity)
+        local stat=$(cat /sys/class/power_supply/BAT0/status)
+        local icon="⚡"
+        [ "$stat" = "Discharging" ] && icon="🔋"
+        echo -e "$icon $cap%"
+    fi
+}
+
+get_tally() {
+    ls -1A | wc -l
+}
+
+
+
+
+build_ps1() {
+    local EXIT_CODE="$?" # Capture the ghost of the last command immediately
+    
+    # Logic for the "Bleeding" color
+    local COLOR_FRAME
+    if [ $EXIT_CODE -eq 0 ]; then
+        COLOR_FRAME="\[\e[1;37m\]" # White for success
+    else
+        COLOR_FRAME="\[\e[1;31m\]" # Red for failure (The Bleed)
+    fi
+
+    # Start with a fresh line
+    PS1="\n"
+
+
+    # The Random Thought Block
+    PS1+="${COLOR_FRAME}┌─[ \[\e[1;31m\]\$(random_thought) ${COLOR_FRAME}]"
+    
+    # The Uptime Block
+    PS1+="─[ \[\e[1;35m\]\$(get_uptime) ${COLOR_FRAME}]"
+    
+    # The Identity & Path Segment
+    PS1+="--> \[ \$(gradient_bg \"\u\") \] \[\e[1;36m\]in \[\e[1;32m\]\w "
+    
+    # The File Tally (Corpse Counter)
+    PS1+="${COLOR_FRAME}[ \[\e[1;32m\]🗃️ \$(get_tally) ${COLOR_FRAME}]\n"
+
+
+    # The Essence (Battery) Block
+    PS1+="${COLOR_FRAME}└─╼[ \[\e[1;32m\]\$(get_essence) ${COLOR_FRAME}] "
+    
+
+    PS1+="\$ \[\e[0m\]"
+}
+
+PROMPT_COMMAND=build_ps1
+
+
+
+startdev() {
+	
+   	tmux new-session -d -s dev -x "$(tput cols)" -y "$(tput lines)"
+    	tmux set -g pane-border-status top
+    	tmux set -g pane-border-format " [ #T ] "
+    	
+    	tmux split-window -h 
+    	tmux select-pane -t 0 
+    	tmux split-window -v
+    	
+    	tmux select-pane -t 0 -T "Am I creative?"
+    	tmux select-pane -t 1 -T "Tasks"
+    	tmux select-pane -t 2 -T "One Must Imagine Sisyphus Happy"
+    	
+    	tmux send-keys -t 0 'unset PROMPT_COMMAND; export PS1=" "; clear' C-m
+    	tmux send-keys -t 1 'unset PROMPT_COMMAND; export PS1=" "; clear' C-m
+    	tmux send-keys -t 2 'export PS1="build_ps1"; clear' C-m
+    	
+    	tmux send-keys -t 0 "clear; cat ~/Tasks/logo.txt; read" C-m
+    	tmux send-keys -t 1 "clear; ~/Tasks/daily_logger.exe" C-m
+    	
+    	tmux resize-pane -t 0 -x 60 -y 31
+    	#tmux resize-pane -t 1 -x 60 -y 28
+    	#tmux resize-pane -t 2 -x 211 -y 60
+    	tmux select-pane -t 2
+    	tmux set-window-option aggressive-resize off 
+    	tmux set-window-option window-size manual
+    	tmux attach-session -t dev
+}
+setup() {
+	xdotool key Ctrl+0
+	sleep 0.2
+	wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+	sleep 0.2
+	xdotool key --delay 50 Ctrl+minus Ctrl+minus
+	sleep 0.2
+}
+
+alias start_dev='setup;startdev'
+alias end_dev='xdotool key Ctrl+0;tmux kill-session -t dev;'
+
+
+
+
