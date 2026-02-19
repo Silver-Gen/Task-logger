@@ -263,7 +263,7 @@ static void bash_run(const char *cmd)
      * don't break the shell invocation.  The caller must have already
      * escaped any internal double-quotes if needed. */
     char full[1024];
-    snprintf(full, sizeof(full), "bash -i -c \"%s\"", cmd);
+    snprintf(full, sizeof(full), "bash -i -c '%s'", cmd);
     system(full);
 }
 
