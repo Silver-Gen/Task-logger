@@ -36,14 +36,16 @@ update_logger() {
 }
 
 add_session() {
+	local time_val="${1//:/.}"
 	conda activate
-	python3 ~/Tasks/updater.py T $1 $2 $3
+	python3 ~/Tasks/updater.py T "$time_val" "$2" "$3"
 	conda deactivate 
 }
 
 complete_task() {
+	local time_val="${1//:/.}"
 	conda activate
-	python3 ~/Tasks/updater.py C $1 $2 $3
+	python3 ~/Tasks/updater.py C "$time_val" "$2" "$3"
 	conda deactivate 
 }
 
@@ -191,7 +193,6 @@ setup() {
 
 alias start_dev='setup;startdev'
 alias end_dev='xdotool key Ctrl+0;tmux kill-session -t dev;'
-
 
 
 
