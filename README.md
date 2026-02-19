@@ -56,7 +56,7 @@ As a demonstrative example Here are some screenshots of what This would probably
 
 
 
-Here is the Desctiption of Logger. Same content is there in the ![Txt FIle](Timneline-Tasks-Desc.txt)
+Here is the Desctiption of Logger. Same content is there in the ![Txt FIle](Timeline-Tasks-Desc.txt)
 1) Tasks
 2) Description
 3) Prediction Time - How much time do you think This will take to complete? (Default - 36 Hours)
