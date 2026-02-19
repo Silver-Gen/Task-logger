@@ -48,7 +48,15 @@ Essentially the Motivation of this project was to have
 This does not means we should re-invent the wheel for the sake of Flying across oceans. But we should have control and knowledge over the object that decides our daily personal life. 
 As a demonstrative example Here are some screenshots of what This would probably look like -
 
+Here is the TUI
+![TUI Task](Screenshots/Shows TUI Task Choice.png)
+![Timer in TUI](Screenshots/Shows Task Timer.png)
+![TUI+GUI for Halt EF](Screenshots/Shows how Tasks Goes to Halt.png)
 
+This shows the GUI 
+![GUI](Screenshots/Shows GUI.png)
+![Add Task GUI](Screenshots/Shows How to Add tasks.png)
+![Edit Task inside Gui](Screenshots/Shows how to edit tasks.png)
 
 
 
@@ -126,36 +134,19 @@ I am showcasing 16 proably different visuals along 4 tabs in the GUI. A peak int
 Here is the description of Visuals that in the Gui
 
 Tab I - "Work Effort Progress and other Abstractions"
-1) Pie chart of Uninitiated,Ongoing,Halted,Dropped,Completed,Post Completion - "Historics record of how much have I conquered"
-2) 
-3) Progress vs Labor Time Series  for Last 7 active(recently activity of any kind which goes back full dates) task (Task name as color separation, - vs Dates of Ongoing vs Labor 
-X - Axis - Date
-Y - Axis  - Labor Hours 
-Progress Till - Size of Scatter
-Color - Task 
-(How do we define last 7? - Those task which have recent activity of any kind) -  "Shows me how I am working on recent tasks"
-4) Effort Points vs Priority graph - This would give a single matrix containing "Efforts vs Priority Graph and COlor them, Around the graph would be somewhere small list of 2 -3 tasks in each column - "Shows me what should be next task"
+![Tab I](Screenshots/Show Graph TAb 1.png)
 
 
 Tab II Name - "understanding Tags" (Options - Individual vs Grouped) 
-1) Tags wise Priority - Bar Graph
-2) Tags Wise average Prediction Time - Scatter plot with Task as Color
-3) Tags wise Labor  and Effort Points - Scatter plot with Task as Color
-4) Tags vs average session Progress
+![Tab I](Screenshots/Show Graph TAB 2.png)
 
 
 Tab III - "Hall of Halts and Dropped"
-1) Estimated Effort Points Prediction Time   Labor Time and  number days of Halt- Average / Mean
-2) Dropped vs Halt(Color distinction) Labour Time vs Dates
-3) Common Tags for Halted and Common Tags for Dropping (Grouped for Task)
-4) Dropped vs Halt(Color distinction) Progress Time vs Dates
+![Tab I](Screenshots/Show Graph Tab 3.png)
 
 
 Tab IV - "Is this end or Should we Transcend?"
-1)  Lifecycle Time Breakdown - Show Graphs in four phases - Unintiated ,Halted, Completed Of Last 4 completed tasks. - Give Effort Points and prediction and overimpose labor and progress till  ????(I have no Idea How to be honest)
-2) Estimated Effort Points Prediction Time   Labor Time and  number days of Completion - Average/Mean
-3) Priority vs Completion Time vs Effort Values - Scatter Plot
-4) Tags vs Completion (Individual vs Group)
+![Tab I](Screenshots/Show Graph TAB 4.png)
 
 
 
