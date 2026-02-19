@@ -22,8 +22,6 @@ Date of Declaration _ Date of Initiation _ Date of Ongoing _ Data of Halt _ Date
 DD/MM/YY _ DD/MM/YY _ DD/MM/YY{...} _ DD/MM/YY _ DD/MM/YY
 
 
-UPdate Dates and Time Taken Until everyday
-
 
 
 
